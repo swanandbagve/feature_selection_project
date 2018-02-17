@@ -4,7 +4,7 @@ from inspect import getargspec
 import pandas as pd
 
 data = pd.read_csv('data/house_prices_multivariate.csv')
-expected = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'FullBath']
+expected = ['OverallQexitual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'FullBath']
 top_features = percentile_k_features(data)
 
 class TestPercentile_k_features(TestCase):
@@ -17,7 +17,7 @@ class TestPercentile_k_features(TestCase):
         self.assertEqual(args[3], (20,), "Expected default values do not match given default values")
 
         # Return data types
-    def test_percentile_k_features_return_instance(self):    
+    def test_percentile_k_features_return_instance(self):
         self.assertIsInstance(top_features, list,
                               "Expected data type for return value is `List`, you are returning %s" % (
                                   type(top_features)))
