@@ -4,7 +4,7 @@ from inspect import getargspec
 import pandas as pd
 
 data = pd.read_csv('data/house_prices_multivariate.csv')
-expected = ['OverallQexitual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'FullBath']
+expected = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'FullBath']
 top_features = percentile_k_features(data)
 
 class TestPercentile_k_features(TestCase):
